@@ -4,10 +4,13 @@ import { useDispatch } from 'react-redux'
 import {
   addFilters,
   appliesFilterValue,
-  selectFilters,
+  selectedFilters,
   selectedFilterValue,
+  updateFilteredData,
 } from '../../../../store/reducers/FiltersState.slice'
 import { useAppSelector } from '../../../../../app/hooks'
+import { IPost } from '../../../../../interfaces/Post'
+import { IComment } from '../../../../../interfaces/Comment'
 
 const STORAGE_KEY = 'filtersState'
 
@@ -33,10 +36,10 @@ const saveFilters = (newFilters: IFiltersLocalData): void => {
   localStorage.setItem(STORAGE_KEY, formattedStoreData)
 }
 
-const useFiltersTest = () => {
+const useFilters = () => {
   const dispatch = useDispatch()
 
-  const filters = useAppSelector(selectFilters)
+  const filters = useAppSelector(selectedFilters)
 
   useEffect(() => {
     const storedFilters = getStoredFilters()
@@ -46,17 +49,21 @@ const useFiltersTest = () => {
     }
   }, [])
 
-  const updateFilter = (payload: { filtersId: string; filterId: string; newState: string | boolean }): void => {
+  const selectFilter = (payload: { filtersId: string; filterId: string; newState: string | boolean }): void => {
     dispatch(selectedFilterValue(payload))
     saveFilters(filters)
   }
 
-  const applyFilterValue = (payload: { filtersId: string; filterId: string; newState: string | boolean }): void => {
+  const applyFilter = (payload: { filtersId: string }): void => {
     dispatch(appliesFilterValue(payload))
     saveFilters(filters)
   }
 
-  return { filters, updateFilter, applyFilterValue }
+  const initialFilteredData = (filteredData: IPost[] | IComment[]): void => {
+    dispatch(updateFilteredData(filteredData))
+  }
+
+  return { filters, selectFilter, applyFilter, initialFilteredData }
 }
 
-export default useFiltersTest
+export default useFilters

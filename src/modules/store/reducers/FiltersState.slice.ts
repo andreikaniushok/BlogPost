@@ -4,13 +4,17 @@ import {
   IFiltersLocalData,
 } from '../../common/features/Filters/interfaces/FiltersLocalData/FiltersLocalData'
 import { TRootState } from '../../../app/store'
+import { IPost } from '../../../interfaces/Post'
+import { IComment } from '../../../interfaces/Comment'
 
 interface IFiltersReduxState {
   filters: IFiltersLocalData
+  filteredData: IPost[] | IComment[]
 }
 
 const initialState: IFiltersReduxState = {
   filters: {},
+  filteredData: [],
 }
 
 const FiltersSlice = createSlice({
@@ -52,14 +56,9 @@ const FiltersSlice = createSlice({
       }
     },
 
-    appliesFilterValue: (
-      state,
-      {
-        payload: { filtersId, filterId, newState },
-      }: PayloadAction<{ filtersId: string; filterId: string; newState: boolean | string }>,
-    ) => {
+    appliesFilterValue: (state, { payload: { filtersId } }: PayloadAction<{ filtersId: string }>) => {
       if (state.filters[filtersId]) {
-        state.filters[filtersId].applyValues[filterId] = newState
+        state.filters[filtersId].applyValues = { ...state.filters[filtersId].selectedValues }
       }
     },
 
@@ -74,12 +73,21 @@ const FiltersSlice = createSlice({
         }
       })
     },
+
+    updateFilteredData: (state, action: PayloadAction<IPost[] | IComment[]>) => {
+      return {
+        ...state,
+        filteredData: action.payload,
+      }
+    },
   },
 })
 
-export const selectFilters = (state: TRootState) => state.filters.filters
+export const selectedFilters = (state: TRootState) => state.filters.filters
+export const selectedFiltersData = (state: TRootState) => state.filters.filteredData
 
-export const { initialFilters, selectedFilterValue, appliesFilterValue, addFilters } = FiltersSlice.actions
+export const { initialFilters, selectedFilterValue, appliesFilterValue, addFilters, updateFilteredData } =
+  FiltersSlice.actions
 
 const FiltersReducer = FiltersSlice.reducer
 

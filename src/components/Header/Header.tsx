@@ -1,8 +1,7 @@
-import { FC, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 import Styled from './Header.styles'
 import ButtonNormal from '../buttons/ButtonNormal/ButtonNormal'
 import useLogin from '../../hooks/useLogin/useLogin'
-import Login from '../../containers/Login/Login'
 import { useAppSelector } from '../../app/hooks'
 import { AccountSelectors } from '../../modules/store/reducers/Account.slice'
 import uploadPng from './assets/images/logo.png'
@@ -10,6 +9,8 @@ import PostForm from '../PostForm/PostForm'
 import usePostList from '../../hooks/usePostList copy/usePostList'
 import { useNavigate } from 'react-router-dom'
 import { EAppRoute } from '../../routes/AppRoute'
+
+import { size } from '../../App.styled'
 
 interface IProps {
   homeHeader: boolean
@@ -52,10 +53,6 @@ const Header: FC<IProps> = ({ homeHeader }) => {
     navigate(EAppRoute.UserPosts)
   }
 
-  const goToFiltersPage = () => {
-    navigate(EAppRoute.Filter)
-  }
-
   return (
     <>
       {homeHeader ? (
@@ -75,12 +72,12 @@ const Header: FC<IProps> = ({ homeHeader }) => {
                   Home
                 </ButtonNormal>
 
-                <ButtonNormal
+                {/* <ButtonNormal
                   preset="header"
                   onClick={goToFiltersPage}
                 >
                   Filters
-                </ButtonNormal>
+                </ButtonNormal> */}
 
                 <ButtonNormal
                   preset="header"
@@ -90,7 +87,7 @@ const Header: FC<IProps> = ({ homeHeader }) => {
                 </ButtonNormal>
               </Styled.ButtonWrapper>
 
-              {!isOpenPostForm ? (
+              {/* {!isOpenPostForm ? (
                 <ButtonNormal
                   preset="addHeader"
                   onClick={handleClickOpenPostForm}
@@ -112,7 +109,7 @@ const Header: FC<IProps> = ({ homeHeader }) => {
                     <PostForm addPost={addPost} />
                   </Styled.LoginForm>
                 </Styled.ShadowBackground>
-              )}
+              )} */}
 
               <Styled.CurrentUserWrapper>
                 <Styled.UserName>
@@ -145,12 +142,12 @@ const Header: FC<IProps> = ({ homeHeader }) => {
                   Home
                 </ButtonNormal>
 
-                <ButtonNormal
+                {/* <ButtonNormal
                   preset="header"
                   onClick={goToFiltersPage}
                 >
                   Filters
-                </ButtonNormal>
+                </ButtonNormal> */}
               </Styled.ButtonWrapper>
               <Styled.CurrentUserWrapper>
                 <ButtonNormal
@@ -179,12 +176,12 @@ const Header: FC<IProps> = ({ homeHeader }) => {
                 Home
               </ButtonNormal>
 
-              <ButtonNormal
+              {/* <ButtonNormal
                 preset="header"
                 onClick={goToFiltersPage}
               >
                 Filters
-              </ButtonNormal>
+              </ButtonNormal> */}
 
               <ButtonNormal
                 preset="header"
@@ -225,12 +222,12 @@ const Header: FC<IProps> = ({ homeHeader }) => {
                 Home
               </ButtonNormal>
 
-              <ButtonNormal
+              {/* <ButtonNormal
                 preset="header"
                 onClick={goToFiltersPage}
               >
                 Filters
-              </ButtonNormal>
+              </ButtonNormal> */}
             </Styled.ButtonWrapper>
             <Styled.CurrentUserWrapper>
               <ButtonNormal

@@ -9,7 +9,9 @@ const Wrapper = styled.div`
 
   align-self: flex-start;
 
-  background-color: #1fa8ad;
+  /* background-color: #1fa8ad; */
+
+  background: linear-gradient(to right, rgba(9, 9, 121, 1) 0%, rgba(2, 0, 36, 1) 0%, rgba(0, 212, 255, 1) 100%);
 
   @media ${device.laptopL} {
     max-width: 1024px;
@@ -18,7 +20,7 @@ const Wrapper = styled.div`
 
 const LoginHeader = styled.div`
   height: auto;
-  width: 90%;
+  width: 98%;
 
   flex-direction: column;
 
@@ -45,7 +47,7 @@ const LoginHeader = styled.div`
 
 const LogoutHeader = styled.div`
   height: auto;
-  width: 90%;
+  width: 98%;
 
   flex-direction: column;
 
@@ -117,6 +119,10 @@ const Img = styled.img`
   border-radius: 15px;
 
   cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 0 0 2px white;
+  }
 `
 
 const ButtonWrapper = styled.div`

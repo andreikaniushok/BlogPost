@@ -17,8 +17,14 @@ const Wrapper = styled.div`
   }
 `
 
+const HeaderBlock = styled.div`
+  height: 100%;
+  width: 100%;
+`
+
 const StyledPostPage = {
   Wrapper,
+  HeaderBlock,
 }
 
 export default StyledPostPage

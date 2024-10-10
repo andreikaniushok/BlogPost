@@ -4,10 +4,11 @@ import Styled from './NormalTextArea.styles'
 interface IProps {
   label: string
   value: string
+  placeholder?: string
   onChange: (value: string) => void
 }
 
-const NormalTextArea: FC<IProps> = ({ label, value, onChange }) => {
+const NormalTextArea: FC<IProps> = ({ label, value, placeholder, onChange }) => {
   const handleChangeContent = (e: ChangeEvent<HTMLTextAreaElement>): void => {
     onChange(e.target.value)
   }
@@ -17,7 +18,7 @@ const NormalTextArea: FC<IProps> = ({ label, value, onChange }) => {
       <Styled.Span>{label}</Styled.Span>
 
       <Styled.TextArea
-        placeholder={'Enter text'}
+        placeholder={placeholder}
         required
         maxLength={400}
         value={value}

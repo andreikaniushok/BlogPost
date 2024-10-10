@@ -27,6 +27,11 @@ const Option = styled.a`
   text-decoration: none;
 
   display: block;
+
+  &:hover {
+    background-color: rgb(22, 138, 184);
+    color: white;
+  }
 `
 
 const StyledSelect = {

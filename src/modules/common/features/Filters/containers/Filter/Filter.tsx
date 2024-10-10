@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import { useAppSelector } from '../../../../../../app/hooks'
-import { selectFilters } from '../../../../../store/reducers/FiltersState.slice'
+import { selectedFilters } from '../../../../../store/reducers/FiltersState.slice'
 import Select from '../../../../components/Select/Select'
 import Checkbox from '../../../../../../components/inputs/Checkbox/Checkbox'
 
@@ -10,7 +10,7 @@ interface IProps {
 }
 
 const Filter: FC<IProps> = ({ builderId, filtersId }) => {
-  const filters = useAppSelector(selectFilters)
+  const filters = useAppSelector(selectedFilters)
 
   const typeOfFilter = filters[filtersId].filters[builderId].type
 

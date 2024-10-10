@@ -9,10 +9,10 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
 
-  border: 1px solid rgba(21, 111, 230, 0.3);
+  border: 1px solid #ddd;
 
   padding: 20px;
-  border-radius: 15px;
+  border-radius: 10px;
 
   gap: 10px;
 
@@ -27,10 +27,10 @@ const PrevWrapper = styled.div`
   flex-direction: column;
   align-items: center;
 
-  border: 1px solid #1fa8ad;
+  border: 1px solid #ddd;
 
   padding: 20px;
-  border-radius: 15px;
+  border-radius: 10px;
 
   gap: 10px;
 
@@ -39,7 +39,7 @@ const PrevWrapper = styled.div`
   cursor: pointer;
 
   &:hover {
-    background-color: #1fa8ad;
+    background-color: rgb(25, 179, 224);
     color: white;
   }
 `
@@ -125,13 +125,13 @@ const WrapperDateAndTime = styled.div`
 `
 
 const Date = styled.div`
-  font-size: 10px;
+  font-size: 12px;
 
   color: rgb(154, 161, 168);
 `
 
 const Time = styled.div`
-  font-size: 10px;
+  font-size: 12px;
 
   color: rgb(154, 161, 168);
 `

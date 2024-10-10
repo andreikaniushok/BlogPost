@@ -9,9 +9,11 @@ const PostsPage: FC = () => {
   return (
     <>
       <Styled.Wrapper>
-        <Header homeHeader={true} />
+        <Styled.HeaderBlock>
+          <Header homeHeader={true} />
 
-        <Title />
+          <Title />
+        </Styled.HeaderBlock>
 
         <PostsBlock />
 

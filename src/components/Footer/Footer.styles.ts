@@ -9,7 +9,7 @@ const Wrapper = styled.footer`
 
   justify-content: center;
 
-  background-color: rgb(3, 21, 42);
+  background: linear-gradient(135deg, rgba(0, 170, 187, 1) 0%, rgba(0, 204, 255, 1) 100%);
   color: white;
 
   @media ${device.mobileS} {

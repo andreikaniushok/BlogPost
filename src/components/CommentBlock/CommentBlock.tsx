@@ -69,34 +69,76 @@ const CommentBlock: FC<IProps> = ({ postId }) => {
   }
 
   return (
-    <Styled.ContentBlockWrapper>
-      <Styled.Wrapper>
-        <Styled.WrapperTitle>
-          <Styled.Title>COMMENTS</Styled.Title>
+    // <Styled.ContentBlockWrapper>
+    //   <Styled.Wrapper>
+    //     <Styled.WrapperTitle>
+    //       <Styled.Title>COMMENTS</Styled.Title>
 
-          <Select
-            optionList={selectOptionsList}
-            selectedOption={selectedOption}
-            onSelect={handleSelect}
-          />
-        </Styled.WrapperTitle>
+    //       <Select
+    //         optionList={selectOptionsList}
+    //         selectedOption={selectedOption}
+    //         onSelect={handleSelect}
+    //       />
+    //     </Styled.WrapperTitle>
 
-        <Styled.CommentWrapper>
-          {sortedComments.slice(0, shownCommentsCount).map((comment) => (
-            <Comment
-              key={comment.id}
-              onClick={handleClickRemoveButton}
-              onSave={handleSaveComment}
-              {...comment}
-            />
-          ))}
+    //     <Styled.CommentWrapper>
+    //       {sortedComments.slice(0, shownCommentsCount).map((comment) => (
+    //         <Comment
+    //           key={comment.id}
+    //           onClick={handleClickRemoveButton}
+    //           onSave={handleSaveComment}
+    //           {...comment}
+    //         />
+    //       ))}
 
-          {shownCommentsCount < sortedComments.length && (
-            <ButtonNormal onClick={handleShowMoreComments}>Show More</ButtonNormal>
-          )}
-        </Styled.CommentWrapper>
-      </Styled.Wrapper>
-    </Styled.ContentBlockWrapper>
+    //       {shownCommentsCount < sortedComments.length && (
+    //         <ButtonNormal
+    //           preset="showMore"
+    //           onClick={handleShowMoreComments}
+    //         >
+    //           Show More
+    //         </ButtonNormal>
+    //       )}
+    //     </Styled.CommentWrapper>
+    //   </Styled.Wrapper>
+    // </Styled.ContentBlockWrapper>
+    <>
+      {commentList && commentList.length > 0 && (
+        <Styled.ContentBlockWrapper>
+          <Styled.Wrapper>
+            <Styled.WrapperTitle>
+              <Styled.Title>COMMENTS</Styled.Title>
+
+              <Select
+                optionList={selectOptionsList}
+                selectedOption={selectedOption}
+                onSelect={handleSelect}
+              />
+            </Styled.WrapperTitle>
+
+            <Styled.CommentWrapper>
+              {sortedComments.slice(0, shownCommentsCount).map((comment) => (
+                <Comment
+                  key={comment.id}
+                  onClick={handleClickRemoveButton}
+                  onSave={handleSaveComment}
+                  {...comment}
+                />
+              ))}
+
+              {shownCommentsCount < sortedComments.length && (
+                <ButtonNormal
+                  preset="showMore"
+                  onClick={handleShowMoreComments}
+                >
+                  Show More
+                </ButtonNormal>
+              )}
+            </Styled.CommentWrapper>
+          </Styled.Wrapper>
+        </Styled.ContentBlockWrapper>
+      )}
+    </>
   )
 }
 

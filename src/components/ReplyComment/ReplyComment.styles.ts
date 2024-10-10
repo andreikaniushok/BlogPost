@@ -11,11 +11,13 @@ const Wrapper = styled.div`
 
   padding: 20px;
 
-  border-radius: 15px;
+  border: 1.5px solid #ddd;
+
+  border-radius: 5px;
 
   gap: 10px;
 
-  background-color: rgb(232, 243, 252);
+  background-color: white;
 `
 
 const Content = styled.div`

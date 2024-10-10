@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
 
-  border: 1px solid rgba(21, 111, 230, 0.3);
+  border: 1px solid #ddd;
 
   padding: 20px;
   border-radius: 15px;

@@ -1,11 +1,4 @@
-// export interface IFiltersLocalData {
-//   [filtersId: string]: {
-//     filters: {
-//       [filterId: string]: string | boolean
-//     }
-//     isShow: boolean
-//   }
-// }
+import { ISelectOption } from '../../../../components/Select/Select'
 
 export interface IFiltersLocalData {
   [filtersId: string]: {
@@ -32,5 +25,10 @@ export interface IFiltersConfig {
 export interface IFilter {
   id: string
   name: string
-  type: 'select' | 'checkbox'
+  type: 'select' | 'checkbox' | 'search'
+  optionList?: ISelectOption[]
+}
+
+export interface IApplyFiltersValues {
+  [filterId: string]: string | boolean
 }

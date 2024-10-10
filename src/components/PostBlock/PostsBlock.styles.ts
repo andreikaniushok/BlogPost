@@ -16,7 +16,7 @@ const PostBlockWrapper = styled.div`
 `
 
 const Wrapper = styled.div`
-  width: 90%;
+  width: 98%;
 
   display: flex;
   align-items: center;
@@ -31,7 +31,7 @@ const Title = styled.div`
   display: flex;
   justify-content: center;
 
-  font-size: 100%;
+  font-size: 140%;
   font-weight: bold;
 
   @media ${device.mobileL} {
@@ -61,15 +61,15 @@ const PostWrapper = styled.div`
   }
 `
 
+const FilterWrapper = styled.div`
+  width: 98%;
+`
+
 const WrapperTitle = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  padding-top: 24px;
-  padding-left: 24px;
-  padding-right: 24px;
 
   gap: 15px;
 
@@ -90,20 +90,39 @@ const WrapperButtons = styled.div`
   width: 100%;
   height: 10%;
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
+  justify-content: space-around;
+
+  gap: 5px;
+`
+const WrapperNumbersButtons = styled.div`
+  width: 80%;
+  height: 10%;
+  display: flex;
+
   justify-content: center;
 
   gap: 5px;
 `
 
+const WrapperOpenCloseButtonFilter = styled.div`
+  width: 100%;
+
+  display: flex;
+  justify-content: end;
+`
+
 const StyledContentBlock = {
   Wrapper,
   Title,
+  FilterWrapper,
   PostWrapper,
   WrapperTitle,
   WrapperPageButtons,
   WrapperButtons,
   PostBlockWrapper,
+  WrapperNumbersButtons,
+  WrapperOpenCloseButtonFilter,
 }
 
 export default StyledContentBlock
