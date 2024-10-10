@@ -18,7 +18,7 @@ const CommentFormWrapper = styled.div`
 
 const Wrapper = styled.div`
   height: auto;
-  width: 90%;
+  width: 98%;
 
   display: flex;
   justify-content: center;

@@ -4,16 +4,18 @@ const Wrapper = styled.div`
   width: 100%;
 
   display: flex;
-  gap: 4px;
+  justify-content: center;
+
+  gap: 5px;
 `
 
 const Input = styled.input`
-  height: 30px;
-  width: 100%;
+  height: 20px;
+  width: 20px;
 
-  border: 2px solid #e1e1e1;
-  padding: 4px 6px;
-  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 
 const Label = styled.span`

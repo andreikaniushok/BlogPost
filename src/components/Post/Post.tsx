@@ -30,7 +30,6 @@ const Post: FC<TProps> = ({
   time,
   prevVersion,
   isShow,
-  // replyCommentList,
   onClickPost,
   onClick,
   onSave,

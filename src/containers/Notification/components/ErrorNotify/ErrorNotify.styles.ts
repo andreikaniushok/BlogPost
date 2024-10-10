@@ -25,7 +25,7 @@ const Notification = styled.div`
 
   border: 1px solid red;
   color: red;
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0.2);
 
   pointer-events: auto;
 `

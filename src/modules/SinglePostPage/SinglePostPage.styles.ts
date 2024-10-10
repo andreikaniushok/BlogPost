@@ -10,6 +10,8 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: space-between;
 
+  background-color: #fff;
+
   gap: 10px;
 
   @media ${device.laptopL} {
@@ -19,7 +21,7 @@ const Wrapper = styled.div`
 
 const PostWrapper = styled.div`
   height: auto;
-  width: 90%;
+  width: 98%;
 
   display: flex;
   justify-content: center;

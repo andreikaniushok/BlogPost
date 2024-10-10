@@ -11,4 +11,5 @@ export interface IComment {
   owner: IUser
   date: IDate
   time: ITime
+  isShow?: boolean
 }

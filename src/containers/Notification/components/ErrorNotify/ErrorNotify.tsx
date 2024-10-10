@@ -17,7 +17,7 @@ const ErrorNotify: FC<IProps> = ({ title, onClick }) => {
             onClick={onClick}
             preset="close"
           >
-            Close
+            X
           </ButtonNormal>
         </Styled.ButtonWrapper>
       </Styled.NotifyWrapper>

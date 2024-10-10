@@ -18,7 +18,7 @@ const ContentBlockWrapper = styled.div`
 `
 
 const Wrapper = styled.div`
-  width: 90%;
+  width: 98%;
 
   display: flex;
   align-items: center;

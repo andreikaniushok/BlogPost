@@ -18,6 +18,8 @@ interface IProps {
     | 'numberPage'
     | 'select'
     | 'header'
+    | 'showMore'
+    | 'apply'
   // color?: 'orange' | 'blue' | 'red' | 'purple'
   // size?: 'big' | 'average' | 'small'
   onClick?: () => void
