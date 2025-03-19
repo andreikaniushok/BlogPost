@@ -19,8 +19,6 @@ const SinglePostPage: FC = () => {
   const [post, setPost] = useState<IPost>()
 
   const postList = useMemo(() => {
-    console.log('RENDERED')
-
     return Object.values(postByUserId).reduce<IPost[]>((acc, posts) => {
       acc.push(...posts)
 

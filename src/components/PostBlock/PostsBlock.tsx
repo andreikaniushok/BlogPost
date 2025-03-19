@@ -69,8 +69,6 @@ const PostsBlock: FC = () => {
   const displayedPosts = useSelector(selectedFiltersData) as IPost[]
   const postList = displayedPosts.length > 0 ? displayedPosts : postedList
 
-  console.log('PL_TEST', postList)
-
   useEffect(() => {
     setSortedPosts(postList)
   }, [postList])
